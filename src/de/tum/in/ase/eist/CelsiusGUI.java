@@ -16,7 +16,6 @@ public class CelsiusGUI extends TemperatureGUI {
 
 	//1.5.1: Implement onUpdate: Invoke the method setDisplay() with the new value converted to a String
 	public void onUpdate(Double value) {
-		String string = String.valueOf(value.intValue());
-		setDisplay(string);
+		setDisplay(value.toString());
 	}
 }

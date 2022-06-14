@@ -33,6 +33,7 @@ public class GaugeGUI implements Observer<Double> {
 		this.gaugeCanvas = new GaugeCanvas();
 	}
 
+	public TemperatureModel getModel() { return this.model; }
 	public void show() {
 		if (gaugeFrame == null) {
 			gaugeFrame = new JFrame("Temperature Gauge");

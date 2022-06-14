@@ -3,7 +3,6 @@ package de.tum.in.ase.eist;
 import java.awt.Color;
 import java.awt.Graphics;
 import java.awt.Point;
-import java.util.Observable;
 
 import javax.swing.JFrame;
 import javax.swing.JPanel;

@@ -17,7 +17,7 @@ public class KelvinGUI extends TemperatureGUI {
     @Override
     public void onUpdate(Double celsiusValue) {
         Double kelvinValue = TemperatureConverter.convertCelsiusToKelvin(celsiusValue);
-        setDisplay(String.valueOf(kelvinValue.intValue()));
+        setDisplay(kelvinValue.toString());
     }
 
 }

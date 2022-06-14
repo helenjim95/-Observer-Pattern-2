@@ -33,7 +33,7 @@ public final class TemperatureApplication {
 		gaugeGUI.show();
 
 		//Part 2: Instantiate the new KelvinGUI here and show it.
-		KelvinGUI kelvinGUI = new KelvinGUI(temperature, new Point(300, 200));
+		KelvinGUI kelvinGUI = new KelvinGUI(temperature, new Point(300, 300));
 		kelvinGUI.show();
 	}
 

@@ -28,6 +28,6 @@ public final class TemperatureConverter {
 	}
 
 	public static double convertFahrenheitToKelvin(double fahrenheit) {
-		return (9.0 / 5.0) * (fahrenheit - 273.15);
+		return (5.0 / 9.0) * (fahrenheit + 459.67);
 	}
 }

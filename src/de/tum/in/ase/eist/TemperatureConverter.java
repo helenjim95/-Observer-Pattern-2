@@ -22,4 +22,12 @@ public final class TemperatureConverter {
 	public static double convertCelsiusToKelvin(double celsius) {
 		return celsius - 273.15;
 	}
+
+	public static double convertKelvinToFahrenheit(double kelvin) {
+		return 1.8 * (kelvin - 273.15) + 32;
+	}
+
+	public static double convertFahrenheitToKelvin(double fahrenheit) {
+		return (9.0 / 5.0) * (fahrenheit - 273.15);
+	}
 }

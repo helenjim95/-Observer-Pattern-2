@@ -16,8 +16,9 @@ public class FahrenheitGUI extends TemperatureGUI {
 
 	// 1.5.2: Implement onUpdate: pass with the Fahrenheit value to setDisplay(...) by converting
 	//  the Celsius value with the TemperatureConverter and the converting this Fahrenheit value to a string
-	public void onUpdate(Double CelsiuValue) {
-		Double fahrenheitValue = TemperatureConverter.convertCelsiusToFahrenheit(CelsiuValue);
-		setDisplay(String.valueOf(fahrenheitValue.intValue()));
+	public void onUpdate(Double celsiuValue) {
+		Double fahrenheitValue = TemperatureConverter.convertCelsiusToFahrenheit(celsiuValue);
+		String string = String.valueOf(fahrenheitValue.intValue());
+		setDisplay(string);
 	}
 }

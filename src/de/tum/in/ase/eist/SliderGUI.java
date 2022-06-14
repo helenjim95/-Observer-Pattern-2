@@ -8,8 +8,8 @@ import java.awt.event.AdjustmentListener;
 import javax.swing.JFrame;
 import javax.swing.JScrollBar;
 
-// TODO Part 1.4: implement Observer<Double>
-public class SliderGUI {
+// Part 1.4: implement Observer<Double>
+public class SliderGUI implements Observer<Double> {
 
 	private static final int MIN_VALUE = -20;
 	private static final int MAX_VALUE = 160;
@@ -32,8 +32,9 @@ public class SliderGUI {
 		this.model = model;
 		this.location = location;
 		createUI();
-		// TODO Part 1.6: add the object as observer to the subject
+		// Part 1.6: add the object as observer to the subject
 		tempControl.addAdjustmentListener(new SlideListener());
+		model.addObserver(this);
 	}
 
 	protected void createUI() {
@@ -51,9 +52,14 @@ public class SliderGUI {
 		sliderFrame.setVisible(true);
 	}
 
-	//TODO Part 1.4: Implement onUpdate:
+	//Part 1.4: Implement onUpdate:
 	// invoke setValue on tempControl with the new Celsius value (converted to int) to move the slider thumb
 	// set updatedBySubject temporarily to true before updating to avoid creating looping updates
+	@Override
+	public void onUpdate(Double newState) {
+		tempControl.setValue(newState.intValue());
+		updatedBySubject = true;
+	}
 
 	class SlideListener implements AdjustmentListener {
 		@Override

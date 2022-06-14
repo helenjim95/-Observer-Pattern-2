@@ -3,12 +3,13 @@ package de.tum.in.ase.eist;
 import java.awt.Color;
 import java.awt.Graphics;
 import java.awt.Point;
+import java.util.Observable;
 
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 
-// TODO Part 1.3: implement Observer<Double>
-public class GaugeGUI {
+// Part 1.3: implement Observer<Double>
+public class GaugeGUI implements Observer<Double> {
 
 	private static final int WIDTH = 220;
 	private static final int HEIGHT = 300;
@@ -25,7 +26,8 @@ public class GaugeGUI {
 		this.model = model;
 		this.location = location;
 		createUI();
-		// TODO Part 1.6: add the object as observer to the subject
+		// Part 1.6: add the object as observer to the subject
+		model.addObserver(this);
 	}
 
 	protected void createUI() {
@@ -43,8 +45,12 @@ public class GaugeGUI {
 		gaugeFrame.setVisible(true);
 	}
 
-	// TODO Task 1.3: Implement onUpdate: invoke setCurrentValue(..) with the Celsius value of the subject (converted to int)
+	// Task 1.3: Implement onUpdate: invoke setCurrentValue(..) with the Celsius value of the subject (converted to int)
 	//  and then invoke repaint() on the gaugeCanvas
+	public void onUpdate(Double celsiusTemperature) {
+		setCurrentValue(celsiusTemperature.intValue());
+		gaugeCanvas.repaint();
+	}
 
 	public void setCurrentValue(int level) {
 		this.currentValue = level;

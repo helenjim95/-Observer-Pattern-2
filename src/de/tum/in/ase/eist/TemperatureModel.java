@@ -16,6 +16,11 @@ public class TemperatureModel extends Subject<Double> {
 		notifyObservers(tempC);
 	}
 
+	public void setK(double tempK) {
+		setC(TemperatureConverter.convertKelvinToCelsius(tempK));
+	}
+
+
 	public void increaseF(double amount) {
 		final double currentFahrenheit = TemperatureConverter.convertCelsiusToFahrenheit(celsiusTemperature);
 		final double newFahrenheit = currentFahrenheit + amount;
@@ -27,5 +32,12 @@ public class TemperatureModel extends Subject<Double> {
 		setC(celsiusTemperature + amount);
 	}
 
-	//TODO Task 2.2: Add Kelvin-Support by implementing setK() and increaseK()
+	//Task 2.2: Add Kelvin-Support by implementing setK() and increaseK()
+
+	public void increaseK(double amount) {
+		final double currentKelvin = TemperatureConverter.convertCelsiusToKelvin(celsiusTemperature);
+		final double newKelvin = currentKelvin + amount;
+
+		setC(TemperatureConverter.convertKelvinToCelsius(newKelvin));
+	}
 }

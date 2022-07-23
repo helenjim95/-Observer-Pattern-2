@@ -10,7 +10,7 @@ import javax.swing.JPanel;
 import javax.swing.JTextField;
 import javax.swing.border.EmptyBorder;
 
-// Part 1.5: implement Observer<Double>
+// TODO: Part 1.5: concrete observer class -> implement Observer<Double>
 public abstract class TemperatureGUI implements Observer<Double> {
 
 	private static final int BORDER_SIZE = 4;
@@ -18,6 +18,8 @@ public abstract class TemperatureGUI implements Observer<Double> {
 	private static final int HEIGHT = 110;
 
 	private final String label;
+
+//	TODO: reference to concrete subject class
 	private final TemperatureModel model;
 	private JFrame temperatureFrame;
 	protected JPanel controlPanel;
@@ -31,7 +33,7 @@ public abstract class TemperatureGUI implements Observer<Double> {
 		this.label = label;
 		this.location = location;
 		createUI();
-		// Part 1.6: add the object as observer to the subject
+		// TODO: Part 1.6: add the object as observer to the subject
 		model.addObserver(this);
 	}
 

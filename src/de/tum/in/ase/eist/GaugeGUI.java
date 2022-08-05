@@ -25,7 +25,7 @@ public class GaugeGUI implements Observer<Double> {
 		this.model = model;
 		this.location = location;
 		createUI();
-		// Part 1.6: add the object as observer to the subject
+		// TODO: Part 1.6: add the object as observer to the subject
 		model.addObserver(this);
 	}
 
@@ -45,7 +45,7 @@ public class GaugeGUI implements Observer<Double> {
 		gaugeFrame.setVisible(true);
 	}
 
-	// Task 1.3: Implement onUpdate: invoke setCurrentValue(..) with the Celsius value of the subject (converted to int)
+	// TODO: Task 1.3: Implement onUpdate: invoke setCurrentValue(..) with the Celsius value of the subject (converted to int)
 	//  and then invoke repaint() on the gaugeCanvas
 	public void onUpdate(Double celsiusTemperature) {
 		setCurrentValue(celsiusTemperature.intValue());

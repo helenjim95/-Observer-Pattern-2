@@ -4,7 +4,7 @@ import java.util.HashSet;
 import java.util.Objects;
 import java.util.Set;
 
-//TODO: Subject class
+//TODO: Subject class (Generic type)
 public abstract class Subject<T> {
 
 //	TODO: include a list/set of actual observers

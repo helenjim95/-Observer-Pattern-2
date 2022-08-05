@@ -32,8 +32,8 @@ public class SliderGUI implements Observer<Double> {
 		this.model = model;
 		this.location = location;
 		createUI();
-		// Part 1.6: add the object as observer to the subject
 		tempControl.addAdjustmentListener(new SlideListener());
+		// TODO: Part 1.6: add the object as observer to the subject
 		model.addObserver(this);
 	}
 
@@ -52,7 +52,7 @@ public class SliderGUI implements Observer<Double> {
 		sliderFrame.setVisible(true);
 	}
 
-	//Part 1.4: Implement onUpdate:
+	//TODO: Part 1.4: Implement onUpdate:
 	// invoke setValue on tempControl with the new Celsius value (converted to int) to move the slider thumb
 	// set updatedBySubject temporarily to true before updating to avoid creating looping updates
 	@Override
